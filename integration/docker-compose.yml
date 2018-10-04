@@ -4,13 +4,13 @@ services:
   generator:
     build:
       context: .
-    image: my-registry:55000/gen:ci-8
+    image: my-registry:55000/gen:ci-9
     # ports:
     #   - "8080:80"
   mail:
     image: mailhog/mailhog
     # ports:
-    #   - "8025:8025" --dont need ports on CI environment
+    #   - "8025:8025"
   integration:
-    image: my-registry:55000/gen:integration-8
+    image: my-registry:55000/gen:integration-9
     build: .

@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  generator:
+    build:
+      context: .
+    image: my-registry:55000/gen:ci-8
+    # ports:
+    #   - "8080:80"
+  mail:
+    image: mailhog/mailhog
+    # ports:
+    #   - "8025:8025" --dont need ports on CI environment
+  integration:
+    image: my-registry:55000/gen:integration-8
+    build: .

@@ -1,0 +1,13 @@
+{
+    "Logging": {
+      "IncludeScopes": false,
+      "LogLevel": {
+        "Default": "Warning"
+      }
+    },
+    "MailServer":{
+      "Host": "mail-appsettings-prod",
+      "Port": 5025
+    }
+  }
+  

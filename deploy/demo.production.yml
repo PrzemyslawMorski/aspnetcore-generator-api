@@ -1,7 +1,17 @@
-version: '3'
+version: '3.3'
 
 services:
   generator:
     image: my-registry:55000/gen:ci-${GENERATOR_BUILD_NUMBER-10}
     ports:
       - "${PORT_GENERATOR-80}:80"
+    # environment:
+    #   MAILSERVER__HOST: "mail-server-prod-env"
+    #   MAILSERVER__PORT: 25
+    configs:
+      - source: prodappsettings
+        target: /publish/appsettings.json
+
+configs:
+  prodappsettings:
+    file: ./prodappsettings.json
